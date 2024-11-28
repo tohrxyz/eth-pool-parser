@@ -65,6 +65,14 @@ const main = () => {
     fs.appendFileSync(outputFilePath, '  ],\n')
     fs.appendFileSync(outputFilePath, '}')
 
+    fs.appendFileSync(outputFilePath, '\n\n')
+    fs.appendFileSync(outputFilePath, 'pools: [')
+    poolData.forEach((pool, index) => {
+        const entry = `'${pool.pool}'`
+        fs.appendFileSync(outputFilePath, entry + (index === poolData.length - 1 ? '' : ', '))
+    })
+    fs.appendFileSync(outputFilePath, ']\n')
+
     console.log("Successfully wrote to output file at ", outputFilePath)
 }
 
