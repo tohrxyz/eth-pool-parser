@@ -9,3 +9,13 @@ This script parses the Morpho pool data and outputs it in the format required by
 ```bash
 node morphoPoolParser.js <inputFile> <chainId> <outputFile>
 ```
+
+3. The output schema will look like this:
+```
+morpho: {
+  [SupportedChain.Base]: [
+    { underlyingToken: '0x00...', aToken: '0x00...', pool: '0x00...' },
+    ...
+  ],
+}
+```
